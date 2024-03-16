@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <he>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+
+    <!-- Montserrat Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/richtexteditor/rte_theme_default.css" />
+    <script type="text/javascript" src="/richtexteditor/rte.js"></script>
+    <script
+      type="text/javascript"
+      src="/richtexteditor/plugins/all_plugins.js"
+    ></script>
+
+    <!-- Material Icons -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet"
+    />
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="./richtexteditor/richtexteditor/rte_theme_default.css"
+    />
+    <script
+      type="text/javascript"
+      src="./richtexteditor/richtexteditor/rte.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./richtexteditor/richtexteditor/plugins/all_plugins.js"
+    ></script>
+  
+    <link rel="stylesheet" href="menu.css" />
+    <!-- <link rel="stylesheet" href="create.css" /> -->
+
+  </head>
+  <body>
+    <div class="grid-container">
+      <!-- Header -->
+      <header class="header">
+        <div class="menu-icon" onclick="openSidebar()">
+          <span class="material-icons-outlined">menu</span>
+        </div>
+        <div class="header-left">
+          <span class="material-icons-outlined">search</span>
+        </div>
+        <div class="header-right">
+          <span class="material-icons-outlined">email</span>
+          <span class="material-icons-outlined">
+            <a href="index.html">logout</a>
+          </span>
+        </div>
+      </header>
+      <!-- End Header -->
+
+      <!-- Sidebar -->
+      <aside id="sidebar">
+        <div class="sidebar-title">
+          <div class="sidebar-brand">
+            <img src="logo.png" alt="logo" class="logo" />
+          </div>
+          <span class="material-icons-outlined" onclick="closeSidebar()"
+            >close</span
+          >
+        </div>
+
+        <ul class="sidebar-list">
+          <li class="sidebar-list-item">
+            <a href="menu.html"><i class="fa fa-home"></i> <span>Home</span></a>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="messages.html"
+              ><i class="fa fa-envelope"></i> <span>messages</span></a
+            >
+          </li>
+          <li class="sidebar-list-item">
+            <a href="blogs.html"
+              ><i class="fas fa-blog"></i> <span>blogs</span></a
+            >
+          </li>
+          <li class="sidebar-list-item">
+            <a href="create.html"
+              ><i class="fa fa-plus"></i> <span>create blog</span></a
+            >
+          </li>
+        </ul>
+      </aside>
+      <!-- End Sidebar -->
+      <main class="main">
+        <div class="main-title">
+          <h2>CREATE BLOG</h2>
+        </div>
+        <div class="form-container">
+         
+          <form class="form-box" id="form" method='POST'>
+            <div class="input-post">
+              <label>Post Title</label>
+              <input type="text" id="title"  name='post-title' placeholder="enter post title" />
+            </div>
+            <div class="input-post">
+              <label>Post image</label>
+              <input type="file" id="profile" name="image" />
+            </div>
+            <div class="input-post">
+              <label>Post description</label>
+              <!-- <input type="text" id="intro"  name='intro'placeholder="enter post des" /> -->
+              <textarea id="intro" name='intro' class="textarea"></textarea>
+            </div>
+            <div class="post">
+              <label id="richText-error">Article</label> 
+
+              <textarea id="div_editor1" name='textarea'></textarea>
+              </div>
+         <div id ="error"></div>
+            <!-- <label>published at</label>
+            <input type="date" name="date" id='date' /> -->
+            <button name="create" class="btn btn-create" id='create'>create</button>
+            <button name="update" class="btn btn-update" id='update'>update</button>
+            
+          </form>
+        </div>
+      </main>
+    </div>
+    <script>
+      var editor1cfg = {};
+      editor1cfg.toolbar = "basic";
+      var editor = new RichTextEditor("#div_editor1", editor1cfg);
+
+const btns=document.querySelectorAll('.btn')
+btns.forEach(function(button){
+  button.addEventListener('click',function(){
+    //console.log(button.id)
+    currentBtn=button.id;
+   
+  })
+})
+
+
+// //listening for change on the text editor
+editor.attachEvent("change", function () {
+           var textCount = editor.getPlainText().trim().length;
+           // console.log(textCount);
+validateEditor();
+         });
+        function validateEditor(){
+          var textCount = editor.getPlainText().trim().length;
+          const message=document.getElementById('richText-error');
+
+          if(textCount<5){
+            message.innerText='write more characters';
+            message.style.color='red';
+            return false
+          }
+          else{
+            message.innerText='article';
+            message.style.color='#000';
+            return true;
+          }
+        }
+
+    </script>
+    <script src="newblogs.js"></script>
+    <script src="dashboard.js"></script>
+  </body>
+</html>
+

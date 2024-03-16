@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+   <link rel="stylesheet" href="blog.css" /> 
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container">
+        <a href="index.html">
+          <img src="logo.png" alt="logo" />
+        </a>
+        
+        <div class="main-menu">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Skills</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contact me</a></li>
+            <li><a href="#">Sign up</a></li>
+            <li><a href="form.html">Login</a></li>
+          </ul>
+        </div>
+      </div>
+      <button class="hamburger-button">
+        <div class="hamburger-line"></div>
+        <div class="hamburger-line"></div>
+        <div class="hamburger-line"></div>
+      </button>
+      <div class="mobile-menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Skills</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="#">Contact me</a></li>
+          <li><a href="#">Sign up</a></li>
+          <li><a href="form.html">Login</a></li>
+        </ul>
+      </div>
+    </nav>
+    
+      
+        <article>
+          <div class="container">
+          <header class="post-header">
+            <h2 id="heading">The basic language of the web:html</h2>
+  
+            <div class="author-box">
+              <p id="author" class="author">
+                Posted by <strong>Janet uwimana</strong>
+              </p>
+            </div>
+            <img src="" width="100" height="100" class="post-img" />
+         
+          </header>
+          <div class='likes'>
+            <span id="like"><i class="fas fa-thumbs-up"></i></span>
+            <span id="comment-emoji"><i class="fas fa-comment"></i></span>
+          </div>
+          <div class="blog">
+          <h3 id="intro" class="subheading"></h3>
+          <div id="post-container" class="article">
+          </div>
+        </div>
+        
+        </div>   
+    </article>
+    <div  class="container">
+      <div class="socials">
+        <a href="www.facebook.com" class="link"><i class="fa-brands fa-facebook"></i></a>
+        <a href="www.twitter.com" class="link"><i class="fa-brands fa-twitter"></i></a>
+        <a href="www.instagram.com" class="link"><i class="fa-brands fa-instagram"></i></a>
+        <a href="www.linkedin.com" class="link"><i class="fa-brands fa-linkedin"></i></a>
+        
+      </div>
+      </div> 
+      <div>
+        
+
+      <div class="container">
+          <div class="contactForm">
+            <form>
+              <h2>comments</h2>
+              <div class="inputBox">
+                <input
+                  type="text"
+                  name=""
+                  id="name"
+                  placeholder="Full Name"
+                />
+                <span id="name-error"></span>
+              </div>
+              <div class="inputBox">
+                <textarea
+                  class="textarea"
+                  placeholder="Type your comment"
+                  id="opinion"
+                ></textarea>
+                <span id="message-error"></span>
+              </div>
+              <div class="error"></div>
+              <div class="inputBox">
+                <button
+                  type="submit"
+                  class="btn btn-send"
+                  id="button"
+                >
+                  send
+                </button>
+                 <span id="submit-error"></span> 
+              </div>
+             
+            </form>
+          </div>
+           
+         </div> 
+         <div class="container">
+          <div class="box" id="comments"> </div>
+         </div>
+         
+  <script src="blog.js">
+  </script>
+  <script src='comments.js'></script>
+    <script src="main.js"></script>
+    <script src="script.js"></script>
+
+  </body>
+</html>
