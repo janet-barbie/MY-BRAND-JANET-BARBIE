@@ -115,7 +115,7 @@ const likeBlog = async () => {
       console.log(data);
       if (data) {
         //alert("like added");
-        window.reload();
+        window.location.reload();
       }
     });
 };
