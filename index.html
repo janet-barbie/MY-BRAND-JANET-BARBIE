@@ -22,24 +22,26 @@
   </head>
   <body>
     <nav class="navbar">
-      <div class="container">
-        <div class="logo">
-          <!-- <div class="nav sticky"> -->
+      <!-- <div class="container"> -->
+        <!-- <div class="nav sticky"> -->
+        <!-- <div class="logo"> -->
+           <div class="nav sticky"> 
           <img src="logo.png" alt="logo" />
-        </div>
-        <div class="main-menu">
-          <ul>
+        <!-- </div> -->
+        <!-- <div class="main-menu"> -->
+          <ul class="nav__links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Skills</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">Contact me</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#blogs">Blog</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact me</a></li>
             <li><a href="form.html">Login</a></li>
           </ul>
 
+          <!-- </div>  -->
           <!-- </div> -->
-        </div>
+        <!-- </div> -->
       </div>
       <button class="hamburger-button">
         <div class="hamburger-line"></div>
@@ -49,11 +51,11 @@
       <div class="mobile-menu">
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Skills</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Portfolio</a></li>
-          <li><a href="#">Contact me</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#blogs">Blog</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact me</a></li>
           <li><a href="login.html">Login</a></li>
         </ul>
       </div>
@@ -296,7 +298,7 @@
             Thank you for interest,lets meet and talk about your project
           </p>
         </div> -->
-        <section class="section-contact">
+        <section class="section-contact" id="contact">
           <div class="container">
              <div class="content"> 
             <h2 >Lets Design Together</h2>
@@ -331,7 +333,7 @@
               </div>
             </div>
             <div class="contactForm">
-              <form id="form">
+              <form class ="contact-form" id="contacts">
                 <h2>send message</h2>
                 <div class="inputBox">
                   <input
@@ -339,7 +341,7 @@
                     name=""
                     id="name"
                     placeholder="Full Name"
-                    onkeyup="validateName()"
+                   
                   />
                   <span id="name-error"></span>
                 </div>
@@ -349,7 +351,7 @@
                     name=""
                     id="email"
                     placeholder="Email"
-                    onkeyup="validateEmail()"
+                   
                   />
                   <span id="email-error"></span>
                 </div>
@@ -358,22 +360,22 @@
                     class="textarea"
                     placeholder="Type your message"
                     id="message"
-                    onkeyup="validateMessage()"
+                   
                   ></textarea>
                   <span id="message-error"></span>
                 </div>
-                <div class="error"></div>
-                <div class="inputBox">
+                <div id="contact-error"></div>
+                <div class="inputBox" id="formSubmit">
                   <button
                     type="submit"
                     class="btn btn-send"
-                    onclick="return validateForm()"
                     id="button"
                   >
                     send
                   </button>
                    <span id="submit-error"></span> 
                 </div>
+                
               </form>
             </div>
              </div> 
@@ -399,9 +401,9 @@
         name=""
         id="names"
         placeholder="Full Name"
-  onkeyup="validateNames()"
+
       />
-      <span id="names-error"></span>
+     
     </div>
     <div class="inputBox">
       <input
@@ -409,9 +411,9 @@
         name=""
         id="emails"
         placeholder="Email"
-         onkeyup="validateEmails()" 
+       
       />
-      <span id="emails-error"></span>
+  
     </div>
     <div class="inputBox">
       <input
@@ -419,18 +421,17 @@
         id="password"
         placeholder="Enter your password"
       />
-      <!-- <i id="pass-toggle-btn" class="fa-solid fa-eye"></i> -->
+ 
     </div>
-    <div class="errors"></div>
-    <div class="inputBox">
+    <div class="signup-error"></div>
+    <div class="inputBox" id="signupBtn">
       <button
         type="submit"
         class="btn btn-send"
-        onclick="return validateForms()"
         id="buttons"> sign up
       </button>
       
-      <span id="submits-error"></span>
+    
     </div>
   </form>
   </div>

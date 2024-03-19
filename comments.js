@@ -4,15 +4,14 @@ let blogId = urlParams.get("blog_id");
 let error = document.querySelector(".error");
 document.getElementById("button").addEventListener("click", function (e) {
   e.preventDefault();
-  let names = document.getElementById("name").value;
+  //let names = document.getElementById("name").value;
   //let email = document.getElementById("email").value;
   let opinion = document.getElementById("opinion").value;
   let error = document.querySelector(".error");
   //console.log(email);
-  console.log(names);
+  //console.log(names);
   console.log(opinion);
   let object = {
-    name: names,
     // email: email,
     comment: opinion,
   };
@@ -42,7 +41,7 @@ const comments = async () => {
         <div class="comment-list">
         <div class="flex">
           <div class="user">
-            <div class="user-image"><img src="scarlet-jones.jpg" alt="user-image"></div>
+            <div class="user-image"></div>
              <div class="user-meta"> 
               <div class="name">${commentList[i].name}</div>
   

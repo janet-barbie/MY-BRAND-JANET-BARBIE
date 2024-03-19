@@ -36,26 +36,45 @@ img {
   text-align: center;
 }
 /* navbar */
-
-.navbar {
-  background-color: #fff;
-  padding: 1.25rem;
-  /* max-width: 81.25rem; */
-}
-
-.navbar .container {
+/* .navbar{
+  padding:1.25rem;
+} */
+.nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height:6rem;
+  width:100%;
+  z-index: 100;
+  background-color: #fff;
+   padding: 0 6rem; 
+   top:0;
+  /* max-width: 81.25rem; */
+}
+.sticky{
+  position: fixed;
+  background-color: #fff;
+   /* width: 100%;  */
 }
 
-.navbar .main-menu ul {
+/* .navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+} */
+
+/* .navbar .main-menu ul {
   display: flex;
 
-  /* align-items: center; */
+  /* align-items: center; 
+} */
+.nav__links{
+  display:flex;
+  align-items: center;
+  list-style: none;
 }
 .navbar ul li a {
-  padding: 0 1.25rem;
+  padding:  0 1.25rem;
   display: block;
   font-weight: 600;
   transition: 0.5s;
@@ -66,7 +85,7 @@ img {
 
 /* header */
 .section-hero {
-  margin-top: 2rem;
+  margin-top: 10rem;
   margin-bottom: 12rem;
 }
 /* .hero {
@@ -419,8 +438,11 @@ height: 13px;
 .inputBox span i {
   color: seagreen;
 }
-.error {
-  color: red;
+#contact-error{
+  color:red; 
+}
+.signup-error{
+  color:red;
 }
 .errors {
   color: red;

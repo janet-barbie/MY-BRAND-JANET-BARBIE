@@ -79,8 +79,11 @@ a:active {
   align-items: center;
   margin-bottom: 10px;
 }
-.post-header {
+/* .post-header {
   margin-bottom: 40px;
+} */
+.heading{
+  padding:10px;
 }
 h2 {
   margin-bottom: 20px;

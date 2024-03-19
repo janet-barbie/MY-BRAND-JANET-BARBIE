@@ -3,6 +3,7 @@ const form = document.querySelector("form");
 const passwordInput = document.getElementById("password");
 const passToggleBtn = document.getElementById("pass-toggle-btn");
 const error = document.getElementById("error");
+error.innerHTML=" ";
 // Function to display error messages
 const showError = (field, errorText) => {
   field.classList.add("error");
@@ -58,7 +59,7 @@ const handleFormData = (e) => {
     email: email,
     password: password,
   };
-
+  document.getElementById("formSubmit").style.display="none";
   login(object);
   console.log(object);
 };
@@ -91,16 +92,23 @@ const login = async (formData) => {
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
+      document.getElementById("formSubmit").style.display="block";
+      
+      if(data.message){
+        error.innerHTML=data.message;
+      }
+      if(data.token){
       localStorage.setItem("storage", JSON.stringify(data.token));
       localStorage.setItem("users", JSON.stringify(data.user.email));
 
       if (data.user.role === "admin") {
-        window.location.href = "menu.html";
+         window.location.href = "menu.html";
       } else {
-        window.location.href = "index.html";
-      }
+        
+      window.location.href = "index.html";
+      }}
     });
+
 };
 
-login();
+
