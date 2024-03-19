@@ -147,6 +147,7 @@ await fetch(`https://my-brand-be-2.onrender.com/api/signup`, {
       }
       else{
         signupError.innerHTML = " ";
+        signupForm.reset();
         alert("signed up successfully");
       }
     })

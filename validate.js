@@ -164,7 +164,10 @@ await fetch(`https://my-brand-be-2.onrender.com/api/queries`, {
       }
       else{
         error.innerHTML = " ";
+        contactForm.reset();
         alert("message sent");
+
+
       }
     })
   }
